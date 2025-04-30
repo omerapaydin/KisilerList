@@ -19,7 +19,7 @@
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Fxb-jV-UIa">
                                 <rect key="frame" x="0.0" y="162" width="393" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Kvx-8V-bcw"/>
+                                    <constraint firstAttribute="height" constant="44" id="Rph-be-YDf"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -29,18 +29,47 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XRk-JA-crW">
                                 <rect key="frame" x="0.0" y="206" width="393" height="646"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="kisiCell" rowHeight="67" id="d1c-yN-kOj" customClass="KisiCellTableViewCell" customModule="KisilerList" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="67"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d1c-yN-kOj" id="TOk-qg-z6a">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="67"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABd-LY-n0z">
+                                                    <rect key="frame" x="98" y="11" width="197" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="197" id="TEK-4F-hCC"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ABd-LY-n0z" firstAttribute="centerX" secondItem="TOk-qg-z6a" secondAttribute="centerX" id="2sk-Rm-dW7"/>
+                                                <constraint firstItem="ABd-LY-n0z" firstAttribute="centerY" secondItem="TOk-qg-z6a" secondAttribute="centerY" id="6eU-w5-EIV"/>
+                                                <constraint firstItem="ABd-LY-n0z" firstAttribute="top" secondItem="TOk-qg-z6a" secondAttribute="topMargin" id="ZB5-IJ-VRx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="kisiLabel" destination="ABd-LY-n0z" id="o6t-3C-0Ix"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="XRk-JA-crW" firstAttribute="top" secondItem="Fxb-jV-UIa" secondAttribute="bottom" id="EMb-JM-NPx"/>
-                            <constraint firstItem="Fxb-jV-UIa" firstAttribute="leading" secondItem="XRk-JA-crW" secondAttribute="leading" id="PNb-17-aFf"/>
-                            <constraint firstItem="Fxb-jV-UIa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a2A-dv-qne"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="XRk-JA-crW" secondAttribute="bottom" constant="-68" id="bWc-GB-Vxy"/>
-                            <constraint firstItem="Fxb-jV-UIa" firstAttribute="trailing" secondItem="XRk-JA-crW" secondAttribute="trailing" id="dii-eh-Gr2"/>
-                            <constraint firstItem="Fxb-jV-UIa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dwK-qS-gHu"/>
-                            <constraint firstItem="Fxb-jV-UIa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tJy-Cn-UVe"/>
+                            <constraint firstItem="Fxb-jV-UIa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5JC-nV-4Yg"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="XRk-JA-crW" secondAttribute="bottom" constant="-68" id="CxD-ou-5w6"/>
+                            <constraint firstItem="XRk-JA-crW" firstAttribute="top" secondItem="Fxb-jV-UIa" secondAttribute="bottom" id="MKP-Rk-YYm"/>
+                            <constraint firstItem="Fxb-jV-UIa" firstAttribute="leading" secondItem="XRk-JA-crW" secondAttribute="leading" id="YF8-hT-a70"/>
+                            <constraint firstItem="Fxb-jV-UIa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fGr-eh-TJR"/>
+                            <constraint firstItem="Fxb-jV-UIa" firstAttribute="trailing" secondItem="XRk-JA-crW" secondAttribute="trailing" id="hfo-Lv-bkS"/>
+                            <constraint firstItem="Fxb-jV-UIa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kH3-h5-mLe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Kişiler" id="pZ3-NX-xu8">
@@ -51,6 +80,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchView" destination="Fxb-jV-UIa" id="Q0S-nF-Jfh"/>
+                        <outlet property="tableView" destination="XRk-JA-crW" id="qGI-se-fzU"/>
                         <segue destination="9YQ-M3-P9N" kind="show" identifier="toGuncelle" id="HlN-Pv-FuA"/>
                         <segue destination="CMQ-zT-Hbl" kind="show" identifier="toDetay" id="yZQ-mA-1kd"/>
                     </connections>
@@ -62,7 +93,7 @@
         <!--Kişi Detay-->
         <scene sceneID="KWX-sl-wkQ">
             <objects>
-                <viewController id="CMQ-zT-Hbl" sceneMemberID="viewController">
+                <viewController id="CMQ-zT-Hbl" customClass="KisiDetayViewController" customModule="KisilerList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hin-jt-gPS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,6 +127,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Kişi Detay" id="XVq-7A-oZ6"/>
+                    <connections>
+                        <outlet property="adLabel" destination="sBz-Ot-9q3" id="EGE-O8-hd3"/>
+                        <outlet property="numLabel" destination="3TX-pj-TkI" id="85u-Ip-Cib"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hBW-Z2-n6y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,7 +139,7 @@
         <!--Kişi Güncelle-->
         <scene sceneID="HrB-EN-J90">
             <objects>
-                <viewController id="9YQ-M3-P9N" sceneMemberID="viewController">
+                <viewController id="9YQ-M3-P9N" customClass="KisiGu_ncelleViewController" customModule="KisilerList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gWh-oF-66e">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,6 +164,9 @@
                                 <rect key="frame" x="135" y="452" width="122" height="46"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Güncelle"/>
+                                <connections>
+                                    <action selector="güncelle:" destination="9YQ-M3-P9N" eventType="touchUpInside" id="m8k-Ye-5TH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hpt-YZ-hJg"/>
@@ -147,6 +185,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Kişi Güncelle" id="c3P-GS-OES"/>
+                    <connections>
+                        <outlet property="adField" destination="xqF-tx-5B3" id="Eew-mg-h6z"/>
+                        <outlet property="numField" destination="ERh-w0-IXJ" id="JHn-93-pXf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rAV-hV-iGG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -155,7 +197,7 @@
         <!--Kişi Ekle-->
         <scene sceneID="42u-wq-u3h">
             <objects>
-                <viewController id="ftI-gb-hmd" sceneMemberID="viewController">
+                <viewController id="ftI-gb-hmd" customClass="KisiEkleViewController" customModule="KisilerList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CDh-ot-2ID">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -180,6 +222,9 @@
                                 <rect key="frame" x="156" y="413" width="81" height="36"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Ekle"/>
+                                <connections>
+                                    <action selector="ekle:" destination="ftI-gb-hmd" eventType="touchUpInside" id="DJp-tP-iBp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ynp-iU-6Tp"/>
@@ -198,6 +243,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Kişi Ekle" id="kf5-6E-dEK"/>
+                    <connections>
+                        <outlet property="adLabel" destination="9oJ-tk-E3U" id="Xsb-es-4DX"/>
+                        <outlet property="numLabel" destination="B8C-VB-Tjh" id="K4m-Sh-618"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YX3-Wg-CKA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

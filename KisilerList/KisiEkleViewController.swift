@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import CoreData
 
 class KisiEkleViewController: UIViewController {
 
+    @IBOutlet weak var numLabel: UITextField!
+    @IBOutlet weak var adLabel: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,14 +19,25 @@ class KisiEkleViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func ekle(_ sender: Any) {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let newAdd = NSEntityDescription.insertNewObject(forEntityName: "Entity", into: context)
+        
+        newAdd.setValue(adLabel.text, forKey: "kisi_ad")
+        newAdd.setValue(numLabel.text, forKey: "kisi_num")
+        
+        
+        do{
+            try context.save()
+        }catch {
+            print("error")
+        }
+        
+        
     }
-    */
+    
 
 }

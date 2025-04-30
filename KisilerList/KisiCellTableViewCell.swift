@@ -9,6 +9,7 @@ import UIKit
 
 class KisiCellTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var kisiLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
