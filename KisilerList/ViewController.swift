@@ -25,6 +25,8 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         tableView.delegate = self
         
         searchView.delegate = self
+        
+        getData() 
     }
 
     
@@ -44,7 +46,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "kisiHucre", for: indexPath) as! KisiCellTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "kisiCell", for: indexPath) as! KisiCellTableViewCell
         cell.kisiLabel.text = kisiAdArray[indexPath.row]
         return cell
     }
@@ -94,9 +96,8 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
                     self.kisiNumArray.append(kisiSoyadi)
                 }
                 
-                self.tableView.reloadData()
-                
             }
+            self.tableView.reloadData()
     
             
         }catch {
