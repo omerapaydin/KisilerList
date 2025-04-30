@@ -30,6 +30,11 @@ class KisiEkleViewController: UIViewController {
         newAdd.setValue(numLabel.text, forKey: "kisi_num")
         
         
+        NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
+        self.navigationController?.popViewController(animated: true)
+        
+        
+        
         do{
             try context.save()
         }catch {

@@ -28,6 +28,12 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         
         getData() 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(getData) , name: NSNotification.Name(rawValue: "reload"), object: nil)
+        
+    }
 
     
     
@@ -76,7 +82,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     
     
     
-    func getData(){
+   @objc func getData(){
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
